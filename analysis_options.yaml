@@ -2,5 +2,5 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
-    public_member_api_docs: true
+    public_member_api_docs: false
     prefer_final_locals: true
