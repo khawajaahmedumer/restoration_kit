@@ -1,0 +1,13 @@
+# Dart/Flutter build artifacts
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Convention for published packages: don't commit the lockfile
+pubspec.lock
+
+# IDE / OS noise
+.idea/
+*.iml
+.DS_Store
