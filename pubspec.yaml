@@ -1,0 +1,29 @@
+name: restoration_kit
+description: >-
+  Effortless state restoration. Survive process death without the
+  RestorationMixin ceremony: one builder widget, drop-in restorable
+  controllers, and a debug-mode guardian for Android's 1 MB limit.
+version: 0.1.0
+# TODO: update before publishing
+homepage: https://github.com/YOUR_USERNAME/restoration_kit
+repository: https://github.com/YOUR_USERNAME/restoration_kit
+issue_tracker: https://github.com/YOUR_USERNAME/restoration_kit/issues
+
+topics:
+  - state-restoration
+  - state
+  - persistence
+  - lifecycle
+
+environment:
+  sdk: ^3.4.0
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
