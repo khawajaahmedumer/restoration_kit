@@ -58,6 +58,7 @@ abstract interface class HostedRestorable {
 /// `final` fields on your State, as above), and a controller instance must
 /// not be shared across two hosts.
 class RestorationHost extends StatefulWidget {
+  /// Creates a host that registers and restores [properties].
   const RestorationHost({
     super.key,
     required this.restorationId,
@@ -72,6 +73,7 @@ class RestorationHost extends StatefulWidget {
   /// ownership contract.
   final List<HostedRestorable> properties;
 
+  /// The widget below this host in the tree.
   final Widget child;
 
   @override
@@ -80,6 +82,12 @@ class RestorationHost extends StatefulWidget {
 
 class _RestorationHostState extends State<RestorationHost>
     with RestorationMixin {
+  /// Properties THIS host has registered. Kept explicitly (rather than
+  /// asking `property.isRegistered`, which is @protected framework
+  /// internals) so dispose unregisters exactly what restoreState
+  /// registered — no more, no less.
+  final Set<HostedRestorable> _registeredByThisHost = <HostedRestorable>{};
+
   @override
   String? get restorationId => widget.restorationId;
 
@@ -88,6 +96,7 @@ class _RestorationHostState extends State<RestorationHost>
     assert(_debugCheckUniqueIds());
     for (final HostedRestorable hosted in widget.properties) {
       registerForRestoration(hosted.property, hosted.restorationId);
+      _registeredByThisHost.add(hosted);
     }
   }
 
@@ -142,11 +151,10 @@ class _RestorationHostState extends State<RestorationHost>
     // recreated (process restoration, conditional subtrees) while the
     // properties live on in the user's State. Without this, re-registering
     // with the next host trips the framework's "already registered" assert.
-    for (final HostedRestorable hosted in widget.properties) {
-      if (hosted.property.isRegistered) {
-        unregisterFromRestoration(hosted.property);
-      }
+    for (final HostedRestorable hosted in _registeredByThisHost) {
+      unregisterFromRestoration(hosted.property);
     }
+    _registeredByThisHost.clear();
     super.dispose();
   }
 

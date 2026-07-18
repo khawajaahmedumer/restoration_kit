@@ -11,6 +11,7 @@ import 'size_guardian.dart';
 /// `String`, or `List`/`Map` compositions of those. Anything else fails
 /// fast with a clear error instead of failing silently at restore time.
 class RestorablePrimitive<T> extends RestorableValue<T> {
+  /// Creates a restorable wrapper around the given default value.
   RestorablePrimitive(this._defaultValue) {
     assert(
       debugIsSerializableForRestoration(_defaultValue),
@@ -56,6 +57,7 @@ class RestorablePrimitive<T> extends RestorableValue<T> {
   /// Best-effort identifier for guardian warnings; falls back to the type.
   String get debugLabel => _debugLabel ?? 'RestorablePrimitive<$T>';
   String? _debugLabel;
+  /// Sets the identifier used in size-guardian warnings.
   set debugLabel(String label) => _debugLabel = label;
 
   @override
@@ -84,6 +86,7 @@ class RestorablePrimitive<T> extends RestorableValue<T> {
 /// If none is found, this widget throws a descriptive [FlutterError] in
 /// debug mode instead of silently doing nothing.
 class RestorableBuilder<T> extends StatefulWidget {
+  /// Creates a widget that restores a single value across process death.
   const RestorableBuilder({
     super.key,
     required this.restorationId,

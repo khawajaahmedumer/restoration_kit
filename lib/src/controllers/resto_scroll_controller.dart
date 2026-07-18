@@ -15,6 +15,8 @@ import '../size_guardian.dart';
 /// ListView(controller: scroll.controller, ...)
 /// ```
 class RestoScrollController implements HostedRestorable {
+  /// Creates a scroll controller whose offset is restored under
+  /// [restorationId].
   RestoScrollController({
     required this.restorationId,
     double initialScrollOffset = 0.0,

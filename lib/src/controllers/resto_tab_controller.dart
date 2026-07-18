@@ -21,6 +21,8 @@ import '../size_guardian.dart';
 /// }
 /// ```
 class RestoTabController implements HostedRestorable {
+  /// Creates a tab controller whose selected index is restored under
+  /// [restorationId].
   RestoTabController({
     required this.restorationId,
     required int length,

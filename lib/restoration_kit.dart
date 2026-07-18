@@ -8,7 +8,7 @@
 ///   text fields, and selected tabs.
 /// * [RestorationSizeGuardian] — debug-mode warnings before you hit
 ///   Android's ~1 MB restoration budget and crash natively.
-library restoration_kit;
+library;
 
 export 'src/controllers/resto_scroll_controller.dart'
     show RestoScrollController;

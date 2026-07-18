@@ -14,6 +14,9 @@ import '../restoration_host.dart';
 /// TextField(controller: search.controller)
 /// ```
 class RestoTextController implements HostedRestorable {
+  /// Creates a text controller whose text is restored under
+  /// [restorationId], starting from [initialText] when there is
+  /// nothing to restore.
   RestoTextController({required this.restorationId, String? initialText})
       : _property = RestorableTextEditingController(text: initialText);
 
