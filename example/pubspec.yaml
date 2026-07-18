@@ -1,0 +1,15 @@
+name: restoration_kit_example
+description: Demonstrates restoration_kit.
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  restoration_kit:
+    path: ../
+
+flutter:
+  uses-material-design: true
