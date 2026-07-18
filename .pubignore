@@ -1,0 +1,6 @@
+# Never publish build artifacts or local state
+build/
+.dart_tool/
+pubspec.lock
+*.zip
+.DS_Store
