@@ -1,9 +1,9 @@
 name: restoration_kit
 description: >-
-  Effortless state restoration. Survive process death without the
-  RestorationMixin ceremony: one builder widget, drop-in restorable
-  controllers, and a debug-mode guardian for Android's 1 MB limit.
-version: 0.1.0
+  Effortless state restoration: survive process death without
+  RestorationMixin ceremony. One builder widget, drop-in controllers,
+  and a debug guardian for Android's 1 MB limit.
+version: 0.1.1
 homepage: https://github.com/khawajaahmedumer/restoration_kit
 repository: https://github.com/khawajaahmedumer/restoration_kit
 issue_tracker: https://github.com/khawajaahmedumer/restoration_kit/issues

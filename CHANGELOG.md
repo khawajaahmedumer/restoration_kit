@@ -1,3 +1,8 @@
+## 0.1.1
+
+* Shortened package description to comply with pub.dev conventions.
+* No functional changes.
+
 ## 0.1.0
 
 Initial release.
